@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Make Changelog original made by izdubar for Mercurial
 # Update for GIT by Caio99BR <caiooliveirafarias0@gmail.com>
 

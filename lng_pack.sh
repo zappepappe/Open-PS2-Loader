@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Lang Packer for Open-PS2-Loader
 # Made by Caio99BR <caiooliveirafarias0@gmail.com>
 # Reworked by Doctor Q <Dr-Q@users.noreply.github.com>
@@ -7,10 +7,15 @@
 CURRENT_DIR=$(pwd)
 BUILD_DIR="/tmp/OPL_LANG"
 LANG_LIST="/tmp/OPL_LANG_LIST"
-make oplversion 2>/dev/null
+if command -v gmake >/dev/null; then
+	GNUMAKE=gmake
+else
+	GNUMAKE=make
+fi
+$GNUMAKE oplversion 2>/dev/null
 if [ $? == "0" ]
 then
-	export OPL_VERSION=$(make oplversion)
+	export OPL_VERSION=$($GNUMAKE oplversion)
 else
 	echo "Falling back to old OPL Lang Pack"
 	VERSION=$(cat ${CURRENT_DIR}/Makefile | grep "VERSION =" | head -1 | cut -d " " -f 3)
