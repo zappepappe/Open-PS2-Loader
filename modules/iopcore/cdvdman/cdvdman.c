@@ -1949,7 +1949,7 @@ void SetStm0Callback(StmCallback_t callback)
 //-------------------------------------------------------------------------
 int _shutdown(void)
 {
-    DeviceDeinit();
+    DeviceUnmount();
 
     return 0;
 }
