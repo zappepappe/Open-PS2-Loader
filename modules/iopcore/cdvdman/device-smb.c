@@ -83,6 +83,7 @@ void DeviceInit(void)
 
 void DeviceDeinit(void)
 {
+    smb_Disconnect();
 }
 
 void DeviceFSInit(void)
